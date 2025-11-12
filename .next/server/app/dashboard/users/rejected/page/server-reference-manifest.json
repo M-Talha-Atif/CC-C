@@ -1,0 +1,49 @@
+{
+  "node": {
+    "7f634046f827e92794253bb3d9a7f38597523d3f9c": {
+      "workers": {
+        "app/dashboard/users/rejected/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/users/rejected/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/users/rejected/page": "action-browser"
+      }
+    },
+    "7fdb89417200e76198de656a4aea5446c994abc42f": {
+      "workers": {
+        "app/dashboard/users/rejected/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/users/rejected/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/users/rejected/page": "action-browser"
+      }
+    },
+    "7f096e46829575edddc45bb2811e1168227e7d276c": {
+      "workers": {
+        "app/dashboard/users/rejected/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/users/rejected/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/users/rejected/page": "action-browser"
+      }
+    },
+    "7f4f50219cd21575d54d9bc68743302ec4e599d211": {
+      "workers": {
+        "app/dashboard/users/rejected/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/users/rejected/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/users/rejected/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}

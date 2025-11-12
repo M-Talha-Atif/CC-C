@@ -1,0 +1,38 @@
+{
+  "node": {
+    "7f634046f827e92794253bb3d9a7f38597523d3f9c": {
+      "workers": {
+        "app/dashboard/users/approved/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/users/approved/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/users/approved/page": "action-browser"
+      }
+    },
+    "7f6f24e6cbd1b3fa3c55b67d3ffbf2c3b0c07d14b6": {
+      "workers": {
+        "app/dashboard/users/approved/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/users/approved/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/users/approved/page": "action-browser"
+      }
+    },
+    "7f4f50219cd21575d54d9bc68743302ec4e599d211": {
+      "workers": {
+        "app/dashboard/users/approved/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/users/approved/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/users/approved/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}

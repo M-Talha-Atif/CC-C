@@ -1,0 +1,104 @@
+{
+  "node": {
+    "7f634046f827e92794253bb3d9a7f38597523d3f9c": {
+      "workers": {
+        "app/dashboard/referrals/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/referrals/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/referrals/page": "action-browser"
+      }
+    },
+    "7f6dce953196bda0c3c48bfb1528aceb2dd46d5ca6": {
+      "workers": {
+        "app/dashboard/referrals/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/referrals/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/referrals/page": "action-browser"
+      }
+    },
+    "7f13bffc63cf5335e337f22081fafd35d4fad7ea81": {
+      "workers": {
+        "app/dashboard/referrals/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/referrals/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/referrals/page": "action-browser"
+      }
+    },
+    "7fac116abffd0d72a56c3d6979d040c5bfda37c582": {
+      "workers": {
+        "app/dashboard/referrals/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/referrals/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/referrals/page": "action-browser"
+      }
+    },
+    "7fe0783bba1a10f1d4244de8d4a070c14f79d53c16": {
+      "workers": {
+        "app/dashboard/referrals/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/referrals/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/referrals/page": "action-browser"
+      }
+    },
+    "7fe3ebac4614d3a31e324dc20bd3304d15de14b6d4": {
+      "workers": {
+        "app/dashboard/referrals/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/referrals/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/referrals/page": "action-browser"
+      }
+    },
+    "7f5b7649f825616330773b3bfcf323a2d14c7a0544": {
+      "workers": {
+        "app/dashboard/referrals/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/referrals/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/referrals/page": "action-browser"
+      }
+    },
+    "7f98ef1a78c445d8fdbf78325bb301ad4572016776": {
+      "workers": {
+        "app/dashboard/referrals/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/referrals/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/referrals/page": "action-browser"
+      }
+    },
+    "7f1e2bb3b6854e1cd38654ca6bf60354bc16b8a9cf": {
+      "workers": {
+        "app/dashboard/referrals/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/referrals/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/referrals/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}

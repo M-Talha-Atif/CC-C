@@ -1,0 +1,71 @@
+{
+  "node": {
+    "7f634046f827e92794253bb3d9a7f38597523d3f9c": {
+      "workers": {
+        "app/dashboard/users/pending/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/users/pending/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/users/pending/page": "action-browser"
+      }
+    },
+    "7fca85de0f604c5ae92a80abf071d0306631d57522": {
+      "workers": {
+        "app/dashboard/users/pending/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/users/pending/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/users/pending/page": "action-browser"
+      }
+    },
+    "7fadcf3ba5f81b4fdda32309ce34eb5db0e14d0707": {
+      "workers": {
+        "app/dashboard/users/pending/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/users/pending/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/users/pending/page": "action-browser"
+      }
+    },
+    "7fcc76b31d08b05a4156f910b46f92525464ba44c6": {
+      "workers": {
+        "app/dashboard/users/pending/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/users/pending/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/users/pending/page": "action-browser"
+      }
+    },
+    "7f4f50219cd21575d54d9bc68743302ec4e599d211": {
+      "workers": {
+        "app/dashboard/users/pending/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/users/pending/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/users/pending/page": "action-browser"
+      }
+    },
+    "7f2811cc40e639d3b5cbf529c06b8c3b74c43b9e76": {
+      "workers": {
+        "app/dashboard/users/pending/page": {
+          "moduleId": "[project]/.next-internal/server/app/dashboard/users/pending/page/actions.js { ACTIONS_MODULE0 => \"[project]/action.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/dashboard/users/pending/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}

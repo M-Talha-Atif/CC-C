@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///D:/Haroon%20-%20Freelance/conocovo/CC-C-main/app/page.tsx"],"sourcesContent":["\"use client\";\n\nimport { useEffect } from \"react\";\nimport { useRouter } from \"next/navigation\";\nimport useUserStore from \"@/store/userStore\";\n\nexport default function Home() {\n  const { user, isAuthenticated } = useUserStore();\n  const router = useRouter();\n\n  useEffect(() => {\n    if (!user && !isAuthenticated) {\n      router.replace(\"/login\");\n    }\n  }, [router, user, isAuthenticated]);\n\n  return null;\n}\n"],"names":[],"mappings":";;;AAEA;AACA;AACA;;AAJA;;;;AAMe,SAAS;;IACtB,MAAM,EAAE,IAAI,EAAE,eAAe,EAAE,GAAG,CAAA,GAAA,qHAAA,CAAA,UAAY,AAAD;IAC7C,MAAM,SAAS,CAAA,GAAA,qIAAA,CAAA,YAAS,AAAD;IAEvB,CAAA,GAAA,6JAAA,CAAA,YAAS,AAAD;0BAAE;YACR,IAAI,CAAC,QAAQ,CAAC,iBAAiB;gBAC7B,OAAO,OAAO,CAAC;YACjB;QACF;yBAAG;QAAC;QAAQ;QAAM;KAAgB;IAElC,OAAO;AACT;GAXwB;;QACY,qHAAA,CAAA,UAAY;QAC/B,qIAAA,CAAA,YAAS;;;KAFF","debugId":null}}]
+}
