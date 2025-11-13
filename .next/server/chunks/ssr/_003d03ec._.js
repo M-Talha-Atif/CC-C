@@ -845,7 +845,8 @@ const __TURBOPACK__default__export__ = Modal;
 var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.s({
-    "default": (()=>RejectedUsersPage)
+    "default": (()=>RejectedUsersPage),
+    "getDomainIcons": (()=>getDomainIcons)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
@@ -862,6 +863,26 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$ellipsis$2d$vertical$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MoreVertical$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/ellipsis-vertical.js [app-ssr] (ecmascript) <export default as MoreVertical>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$users$2f$components$2f$RejectedUsersTable$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/dashboard/users/components/RejectedUsersTable.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$referrals$2f$components$2f$Modal$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/dashboard/referrals/components/Modal.jsx [app-ssr] (ecmascript)");
+(()=>{
+    const e = new Error("Cannot find module '@/components/icons/PhotographerIcon'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
+(()=>{
+    const e = new Error("Cannot find module '@/components/icons/VideographerIcon'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
+(()=>{
+    const e = new Error("Cannot find module '@/components/icons/FloristIcon'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
+(()=>{
+    const e = new Error("Cannot find module '@/components/icons/PlannerIcon'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 "use client";
 ;
 ;
@@ -874,6 +895,51 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$referral
 ;
 ;
 ;
+;
+;
+;
+;
+;
+const domainIconsMap = {
+    photography: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(PhotographerIcon, {
+        size: 12
+    }, void 0, false, {
+        fileName: "[project]/app/dashboard/users/rejected/page.jsx",
+        lineNumber: 24,
+        columnNumber: 16
+    }, this),
+    videography: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(VideographerIcon, {
+        size: 12
+    }, void 0, false, {
+        fileName: "[project]/app/dashboard/users/rejected/page.jsx",
+        lineNumber: 25,
+        columnNumber: 16
+    }, this),
+    florist: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(FloristIcon, {
+        size: 12
+    }, void 0, false, {
+        fileName: "[project]/app/dashboard/users/rejected/page.jsx",
+        lineNumber: 26,
+        columnNumber: 12
+    }, this),
+    planner: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(PlannerIcon, {
+        size: 12
+    }, void 0, false, {
+        fileName: "[project]/app/dashboard/users/rejected/page.jsx",
+        lineNumber: 27,
+        columnNumber: 12
+    }, this)
+};
+function getDomainIcons(domains) {
+    return domains.map((domain)=>domainIconsMap[domain.toLowerCase()] || null).filter(Boolean).map((icon, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+            className: "inline-flex items-center mx-0.5",
+            children: icon
+        }, i, false, {
+            fileName: "[project]/app/dashboard/users/rejected/page.jsx",
+            lineNumber: 35,
+            columnNumber: 7
+        }, this));
+}
 // Confirmation Modal Component
 const ConfirmModal = ({ isOpen, onClose, onConfirm, title, message, loading })=>{
     if (!isOpen) return null;
@@ -890,7 +956,7 @@ const ConfirmModal = ({ isOpen, onClose, onConfirm, title, message, loading })=>
                             children: title
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                            lineNumber: 32,
+                            lineNumber: 57,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -900,13 +966,13 @@ const ConfirmModal = ({ isOpen, onClose, onConfirm, title, message, loading })=>
                             children: "✕"
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                            lineNumber: 33,
+                            lineNumber: 58,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                    lineNumber: 31,
+                    lineNumber: 56,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -916,12 +982,12 @@ const ConfirmModal = ({ isOpen, onClose, onConfirm, title, message, loading })=>
                         children: message
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                        lineNumber: 42,
+                        lineNumber: 67,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                    lineNumber: 41,
+                    lineNumber: 66,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -934,7 +1000,7 @@ const ConfirmModal = ({ isOpen, onClose, onConfirm, title, message, loading })=>
                             children: "Cancel"
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                            lineNumber: 45,
+                            lineNumber: 70,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -947,7 +1013,7 @@ const ConfirmModal = ({ isOpen, onClose, onConfirm, title, message, loading })=>
                                         className: "h-4 w-4 animate-spin mr-2"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                        lineNumber: 59,
+                                        lineNumber: 84,
                                         columnNumber: 17
                                     }, this),
                                     "Deleting..."
@@ -955,24 +1021,24 @@ const ConfirmModal = ({ isOpen, onClose, onConfirm, title, message, loading })=>
                             }, void 0, true) : "Delete"
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                            lineNumber: 52,
+                            lineNumber: 77,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                    lineNumber: 44,
+                    lineNumber: 69,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-            lineNumber: 30,
+            lineNumber: 55,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-        lineNumber: 29,
+        lineNumber: 54,
         columnNumber: 5
     }, this);
 };
@@ -997,18 +1063,18 @@ const ActionsDropdown = ({ onDelete, loading = false })=>{
                     className: "h-4 w-4 animate-spin"
                 }, void 0, false, {
                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                    lineNumber: 92,
+                    lineNumber: 117,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$ellipsis$2d$vertical$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MoreVertical$3e$__["MoreVertical"], {
                     className: "h-4 w-4"
                 }, void 0, false, {
                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                    lineNumber: 94,
+                    lineNumber: 119,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                lineNumber: 83,
+                lineNumber: 108,
                 columnNumber: 7
             }, this),
             isOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -1018,7 +1084,7 @@ const ActionsDropdown = ({ onDelete, loading = false })=>{
                         onClick: ()=>setIsOpen(false)
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                        lineNumber: 100,
+                        lineNumber: 125,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1033,24 +1099,24 @@ const ActionsDropdown = ({ onDelete, loading = false })=>{
                                         className: "h-4 w-4 mr-2"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                        lineNumber: 110,
+                                        lineNumber: 135,
                                         columnNumber: 17
                                     }, this),
                                     "Delete User"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                lineNumber: 106,
+                                lineNumber: 131,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                            lineNumber: 105,
+                            lineNumber: 130,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                        lineNumber: 104,
+                        lineNumber: 129,
                         columnNumber: 11
                     }, this)
                 ]
@@ -1058,7 +1124,7 @@ const ActionsDropdown = ({ onDelete, loading = false })=>{
         ]
     }, void 0, true, {
         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-        lineNumber: 82,
+        lineNumber: 107,
         columnNumber: 5
     }, this);
 };
@@ -1171,7 +1237,7 @@ function RejectedUsersPage() {
                     children: user.createdAt ? new Date(user.createdAt).toLocaleDateString() : "N/A"
                 }, void 0, false, {
                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                    lineNumber: 234,
+                    lineNumber: 259,
                     columnNumber: 9
                 }, this)
         },
@@ -1187,7 +1253,7 @@ function RejectedUsersPage() {
                             children: user.email
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                            lineNumber: 246,
+                            lineNumber: 271,
                             columnNumber: 11
                         }, this),
                         expandedEmailId === user.id && user.phone && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1198,13 +1264,13 @@ function RejectedUsersPage() {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                            lineNumber: 256,
+                            lineNumber: 281,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                    lineNumber: 245,
+                    lineNumber: 270,
                     columnNumber: 9
                 }, this)
         },
@@ -1219,14 +1285,14 @@ function RejectedUsersPage() {
                     children: user.website
                 }, void 0, false, {
                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                    lineNumber: 268,
+                    lineNumber: 293,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                     className: "text-gray-400",
                     children: "N/A"
                 }, void 0, false, {
                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                    lineNumber: 277,
+                    lineNumber: 302,
                     columnNumber: 11
                 }, this)
         },
@@ -1240,42 +1306,40 @@ function RejectedUsersPage() {
                         children: "N/A"
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                        lineNumber: 285,
+                        lineNumber: 310,
                         columnNumber: 18
                     }, this);
                 }
                 const username = user.instagram.startsWith("@") ? user.instagram.slice(1) : user.instagram;
-                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                    href: `https://instagram.com/${username}`,
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                    className: "text-blue-600 hover:underline text-sm",
-                    children: user.instagram
-                }, void 0, false, {
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex flex-col items-start",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                            href: `https://instagram.com/${user.instagram}`,
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            className: "text-blue-600 hover:underline text-sm",
+                            children: user.instagram
+                        }, void 0, false, {
+                            fileName: "[project]/app/dashboard/users/rejected/page.jsx",
+                            lineNumber: 319,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center gap-1 mt-0.5",
+                            children: getDomainIcons(user.creativeDomains)
+                        }, void 0, false, {
+                            fileName: "[project]/app/dashboard/users/rejected/page.jsx",
+                            lineNumber: 328,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                    lineNumber: 293,
+                    lineNumber: 318,
                     columnNumber: 11
                 }, this);
             }
-        },
-        {
-            key: "creativeDomains",
-            header: "Creative Domains",
-            render: (user)=>user.creativeDomains?.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                    className: "text-gray-600 text-sm",
-                    children: user.creativeDomains.join(", ")
-                }, void 0, false, {
-                    fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                    lineNumber: 309,
-                    columnNumber: 11
-                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                    className: "text-gray-400",
-                    children: "N/A"
-                }, void 0, false, {
-                    fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                    lineNumber: 313,
-                    columnNumber: 11
-                }, this)
         },
         {
             key: "phone",
@@ -1285,7 +1349,7 @@ function RejectedUsersPage() {
                     children: user.phone || "N/A"
                 }, void 0, false, {
                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                    lineNumber: 320,
+                    lineNumber: 341,
                     columnNumber: 9
                 }, this)
         },
@@ -1299,7 +1363,7 @@ function RejectedUsersPage() {
                         children: "N/A"
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                        lineNumber: 328,
+                        lineNumber: 349,
                         columnNumber: 18
                     }, this);
                 }
@@ -1311,12 +1375,12 @@ function RejectedUsersPage() {
                             children: "Admin"
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                            lineNumber: 334,
+                            lineNumber: 355,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                        lineNumber: 333,
+                        lineNumber: 354,
                         columnNumber: 13
                     }, this);
                 }
@@ -1330,7 +1394,7 @@ function RejectedUsersPage() {
                             children: user.referralCodeOwner.email
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                            lineNumber: 344,
+                            lineNumber: 365,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1339,13 +1403,13 @@ function RejectedUsersPage() {
                             children: user.referralCodeOwner.instagram || "N/A"
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                            lineNumber: 350,
+                            lineNumber: 371,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                    lineNumber: 340,
+                    lineNumber: 361,
                     columnNumber: 11
                 }, this);
             }
@@ -1358,17 +1422,17 @@ function RejectedUsersPage() {
                 className: "max-w-7xl mx-auto",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$LoadingSpinner$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["LoadingSpinner"], {}, void 0, false, {
                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                    lineNumber: 366,
+                    lineNumber: 387,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                lineNumber: 365,
+                lineNumber: 386,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-            lineNumber: 364,
+            lineNumber: 385,
             columnNumber: 7
         }, this);
     }
@@ -1381,7 +1445,7 @@ function RejectedUsersPage() {
                 onClose: ()=>setToast(null)
             }, void 0, false, {
                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                lineNumber: 375,
+                lineNumber: 396,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1395,7 +1459,7 @@ function RejectedUsersPage() {
                                 children: "Rejected Users"
                             }, void 0, false, {
                                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                lineNumber: 384,
+                                lineNumber: 405,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1403,13 +1467,13 @@ function RejectedUsersPage() {
                                 children: "View and manage rejected user accounts"
                             }, void 0, false, {
                                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                lineNumber: 385,
+                                lineNumber: 406,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                        lineNumber: 383,
+                        lineNumber: 404,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1421,12 +1485,12 @@ function RejectedUsersPage() {
                             className: "flex-1 max-w-md"
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                            lineNumber: 391,
+                            lineNumber: 412,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                        lineNumber: 390,
+                        lineNumber: 411,
                         columnNumber: 9
                     }, this),
                     searchQuery && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1434,7 +1498,7 @@ function RejectedUsersPage() {
                         children: pagination.total === 0 ? `No results found for "${searchQuery}"` : `Found ${pagination.total} result${pagination.total !== 1 ? "s" : ""} for "${searchQuery}"`
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                        lineNumber: 400,
+                        lineNumber: 421,
                         columnNumber: 11
                     }, this),
                     users.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -1445,7 +1509,7 @@ function RejectedUsersPage() {
                                 className: "bg-white border border-gray-200 rounded-lg shadow-sm"
                             }, void 0, false, {
                                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                lineNumber: 410,
+                                lineNumber: 431,
                                 columnNumber: 13
                             }, this),
                             pagination.totalPages > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1458,7 +1522,7 @@ function RejectedUsersPage() {
                                         children: "Previous"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                        lineNumber: 418,
+                                        lineNumber: 439,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1471,7 +1535,7 @@ function RejectedUsersPage() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                        lineNumber: 434,
+                                        lineNumber: 455,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1481,13 +1545,13 @@ function RejectedUsersPage() {
                                         children: "Next"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                        lineNumber: 437,
+                                        lineNumber: 458,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                lineNumber: 417,
+                                lineNumber: 438,
                                 columnNumber: 15
                             }, this)
                         ]
@@ -1496,20 +1560,20 @@ function RejectedUsersPage() {
                         description: "No rejected users match your search criteria."
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                        lineNumber: 457,
+                        lineNumber: 478,
                         columnNumber: 11
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$users$2f$components$2f$EmptyState$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["EmptyState"], {
                         title: "No rejected users",
                         description: "There are no rejected users at the moment."
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                        lineNumber: 462,
+                        lineNumber: 483,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                lineNumber: 382,
+                lineNumber: 403,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(ConfirmModal, {
@@ -1524,7 +1588,7 @@ function RejectedUsersPage() {
                 loading: deleteLoading
             }, void 0, false, {
                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                lineNumber: 470,
+                lineNumber: 491,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$referrals$2f$components$2f$Modal$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1552,7 +1616,7 @@ function RejectedUsersPage() {
                                                     children: "Total Usage:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                                    lineNumber: 499,
+                                                    lineNumber: 520,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1560,13 +1624,13 @@ function RejectedUsersPage() {
                                                     children: Array.isArray(referralUsageList) ? referralUsageList.length : 0
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                                    lineNumber: 502,
+                                                    lineNumber: 523,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                            lineNumber: 498,
+                                            lineNumber: 519,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1577,7 +1641,7 @@ function RejectedUsersPage() {
                                                     children: "Code Owner:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                                    lineNumber: 509,
+                                                    lineNumber: 530,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1585,24 +1649,24 @@ function RejectedUsersPage() {
                                                     children: currentReferralUser.referralCodeOwner?.email || "N/A"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                                    lineNumber: 512,
+                                                    lineNumber: 533,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                            lineNumber: 508,
+                                            lineNumber: 529,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                    lineNumber: 497,
+                                    lineNumber: 518,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                lineNumber: 496,
+                                lineNumber: 517,
                                 columnNumber: 13
                             }, this),
                             isLoadingReferralData ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1612,20 +1676,20 @@ function RejectedUsersPage() {
                                         className: "h-6 w-6 animate-spin mr-2"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                        lineNumber: 522,
+                                        lineNumber: 543,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: "Loading usage data..."
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                        lineNumber: 523,
+                                        lineNumber: 544,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                lineNumber: 521,
+                                lineNumber: 542,
                                 columnNumber: 13
                             }, this) : !Array.isArray(referralUsageList) || referralUsageList.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "text-center py-8",
@@ -1635,7 +1699,7 @@ function RejectedUsersPage() {
                                         children: "No usage data found for this referral code"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                        lineNumber: 528,
+                                        lineNumber: 549,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1643,13 +1707,13 @@ function RejectedUsersPage() {
                                         children: "This code hasn't been used by any users yet."
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                        lineNumber: 531,
+                                        lineNumber: 552,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                lineNumber: 527,
+                                lineNumber: 548,
                                 columnNumber: 13
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "space-y-3",
@@ -1659,7 +1723,7 @@ function RejectedUsersPage() {
                                         children: "Users who used this code:"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                        lineNumber: 537,
+                                        lineNumber: 558,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1675,7 +1739,7 @@ function RejectedUsersPage() {
                                                                 children: usage.user?.email || "No email"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                                                lineNumber: 547,
+                                                                lineNumber: 568,
                                                                 columnNumber: 23
                                                             }, this),
                                                             (usage.user?.firstName || usage.user?.lastName) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1686,7 +1750,7 @@ function RejectedUsersPage() {
                                                                 ].filter(Boolean).join(" ")
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                                                lineNumber: 551,
+                                                                lineNumber: 572,
                                                                 columnNumber: 25
                                                             }, this),
                                                             usage.referralLevel && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1697,13 +1761,13 @@ function RejectedUsersPage() {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                                                lineNumber: 558,
+                                                                lineNumber: 579,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                                        lineNumber: 546,
+                                                        lineNumber: 567,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1718,7 +1782,7 @@ function RejectedUsersPage() {
                                                                 }) : "Unknown"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                                                lineNumber: 564,
+                                                                lineNumber: 585,
                                                                 columnNumber: 23
                                                             }, this),
                                                             parseFloat(usage.pointsToUser) > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1730,36 +1794,36 @@ function RejectedUsersPage() {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                                                lineNumber: 574,
+                                                                lineNumber: 595,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                                        lineNumber: 563,
+                                                        lineNumber: 584,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, usage.id || `usage-${index}`, true, {
                                                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                                lineNumber: 542,
+                                                lineNumber: 563,
                                                 columnNumber: 19
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                        lineNumber: 540,
+                                        lineNumber: 561,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                                lineNumber: 536,
+                                lineNumber: 557,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                        lineNumber: 494,
+                        lineNumber: 515,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1774,24 +1838,24 @@ function RejectedUsersPage() {
                             children: "Close"
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                            lineNumber: 586,
+                            lineNumber: 607,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                        lineNumber: 585,
+                        lineNumber: 606,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-                lineNumber: 483,
+                lineNumber: 504,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/dashboard/users/rejected/page.jsx",
-        lineNumber: 373,
+        lineNumber: 394,
         columnNumber: 5
     }, this);
 }

@@ -18,6 +18,31 @@ import Toast from "../../../../components/Toast";
 import SimplePopup from "../components/Popup";
 import Modal from "../../referrals/components/Modal";
 import { Loader } from "lucide-react";
+import PhotographerIcon from "../components/icons/PhotographerIcon";
+import VideographerIcon from "../components/icons/VideographerIcon";
+import FloristIcon from "../components/icons/FloristIcon";
+import PlannerIcon from "../components/icons/PlannerIcon";
+
+
+
+const domainIconsMap = {
+  photography: <PhotographerIcon size={12} />,
+  videography: <VideographerIcon size={12} />,
+  florist: <FloristIcon size={12} />,
+  planner: <PlannerIcon size={12} />,
+};
+
+function getDomainIcons(domains) {
+  return domains
+    .map((domain) => domainIconsMap[domain.toLowerCase()] || null)
+    .filter(Boolean)
+    .map((icon, i) => (
+      <span key={i} className="inline-flex items-center mx-0.5">
+        {icon}
+      </span>
+    ));
+}
+
 
 export default function PendingUsersPage() {
   const [users, setUsers] = useState([]);
@@ -330,29 +355,35 @@ export default function PendingUsersPage() {
         const url = `https://instagram.com/${username}`;
 
         return (
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
-          >
-            {user.instagram}
-          </a>
+          <div className="flex flex-col items-start">
+            <a
+              href={`https://instagram.com/${user.instagram}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline text-sm"
+            >
+              {user.instagram}
+            </a>
+
+            <div className="flex items-center gap-1 mt-0.5">
+              {getDomainIcons(user.creativeDomains)}
+            </div>
+          </div>
         );
       },
     },
-    {
-      key: "creativeDomains",
-      header: "Creative Domains",
-      render: (user) =>
-        user.creativeDomains?.length > 0 ? (
-          <span className="text-gray-600">
-            {user.creativeDomains.join(", ")}
-          </span>
-        ) : (
-          <span className="text-gray-400">N/A</span>
-        ),
-    },
+    // {
+    //   key: "creativeDomains",
+    //   header: "Creative Domains",
+    //   render: (user) =>
+    //     user.creativeDomains?.length > 0 ? (
+    //       <span className="text-gray-600">
+    //         {getDomainIcons(user.creativeDomains)}
+    //       </span>
+    //     ) : (
+    //       <span className="text-gray-400">N/A</span>
+    //     ),
+    // },
     {
       key: "phone",
       header: "Phone",

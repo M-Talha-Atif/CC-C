@@ -5,11 +5,7 @@ export function ApprovedUsersTable({ data, columns, className = "" }) {
 
   const handleSort = (key) => {
     let direction = "asc";
-    if (
-      sortConfig &&
-      sortConfig.key === key &&
-      sortConfig.direction === "asc"
-    ) {
+    if (sortConfig && sortConfig.key === key && sortConfig.direction === "asc") {
       direction = "desc";
     }
     setSortConfig({ key, direction });
@@ -21,46 +17,42 @@ export function ApprovedUsersTable({ data, columns, className = "" }) {
     const aValue = a[sortConfig.key];
     const bValue = b[sortConfig.key];
 
-    if (aValue < bValue) {
-      return sortConfig.direction === "asc" ? -1 : 1;
-    }
-    if (aValue > bValue) {
-      return sortConfig.direction === "asc" ? 1 : -1;
-    }
+    if (aValue < bValue) return sortConfig.direction === "asc" ? -1 : 1;
+    if (aValue > bValue) return sortConfig.direction === "asc" ? 1 : -1;
     return 0;
   });
 
   const getColumnWidth = (column) => {
     switch (column.key) {
       case "actions":
-        return "w-32 flex-shrink-0";
+        return "w-32";
       case "status":
-        return "w-20 flex-shrink-0";
+        return "w-20";
       case "points":
-        return "w-24 flex-shrink-0";
+        return "w-24";
       case "referralCode":
-        return "w-32 flex-shrink-0";
+        return "w-32";
       case "createdAt":
       case "joined":
-        return "w-32 flex-shrink-0";
+        return "w-18";
       case "email":
-        return "min-w-48";
+        return "w-60";
       case "name":
-        return "min-w-40";
+        return "min-w-[10rem]";
       case "businessName":
-        return "min-w-44";
+        return "min-w-[11rem]";
       case "website":
       case "instagram":
-        return "w-28 flex-shrink-0";
+        return "w-50";
       default:
-        return "min-w-32";
+        return "w-10";
     }
   };
 
   return (
     <div className={`overflow-hidden ${className}`}>
-      <div className="overflow-x-auto">
-        <table className="w-full min-w-max">
+      <div className="w-full">
+        <table className="w-full border-collapse table-fixed">
           <thead>
             <tr className="border-b border-gray-200 bg-gray-50">
               {columns.map((column) => (
@@ -102,18 +94,13 @@ export function ApprovedUsersTable({ data, columns, className = "" }) {
               </tr>
             ) : (
               sortedData.map((item) => (
-                <tr
-                  key={item.id}
-                  className="hover:bg-gray-50 transition-colors"
-                >
+                <tr key={item.id} className="hover:bg-gray-50 transition-colors">
                   {columns.map((column) => (
                     <td
                       key={column.key}
-                      className={`${getColumnWidth(column)} px-4 py-3`}
+                      className={`${getColumnWidth(column)} px-4 py-3 align-top break-words`}
                     >
-                      <div
-                        className={column.key === "actions" ? "" : "truncate"}
-                      >
+                      <div className={column.key === "actions" ? "" : "truncate"}>
                         {column.render(item)}
                       </div>
                     </td>
@@ -125,7 +112,6 @@ export function ApprovedUsersTable({ data, columns, className = "" }) {
         </table>
       </div>
 
-      {/* Table Footer */}
       <div className="bg-gray-50 px-4 py-3 border-t border-gray-200">
         <div className="flex items-center justify-between">
           <div className="text-sm text-gray-600">

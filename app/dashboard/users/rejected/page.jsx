@@ -13,6 +13,31 @@ import Toast from "../../../../components/Toast";
 import { Loader, Trash2, MoreVertical } from "lucide-react";
 import { RejectedUsersTable } from "../components/RejectedUsersTable";
 import Modal from "../../referrals/components/Modal";
+import PhotographerIcon from "../components/icons/PhotographerIcon";
+import VideographerIcon from "../components/icons/VideographerIcon";
+import FloristIcon from "../components/icons/FloristIcon";
+import PlannerIcon from "../components/icons/PlannerIcon";
+
+
+
+const domainIconsMap = {
+  photography: <PhotographerIcon size={12} />,
+  videography: <VideographerIcon size={12} />,
+  florist: <FloristIcon size={12} />,
+  planner: <PlannerIcon size={12} />,
+};
+
+export function getDomainIcons(domains) {
+  return domains
+    .map((domain) => domainIconsMap[domain.toLowerCase()] || null)
+    .filter(Boolean)
+    .map((icon, i) => (
+      <span key={i} className="inline-flex items-center mx-0.5">
+        {icon}
+      </span>
+    ));
+}
+
 
 // Confirmation Modal Component
 const ConfirmModal = ({
@@ -290,29 +315,25 @@ export default function RejectedUsersPage() {
           : user.instagram;
 
         return (
-          <a
-            href={`https://instagram.com/${username}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:underline text-sm"
-          >
-            {user.instagram}
-          </a>
+          <div className="flex flex-col items-start">
+            <a
+              href={`https://instagram.com/${user.instagram}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline text-sm"
+            >
+              {user.instagram}
+            </a>
+
+            <div className="flex items-center gap-1 mt-0.5">
+              {getDomainIcons(user.creativeDomains)}
+            </div>
+          </div>
+
         );
       },
     },
-    {
-      key: "creativeDomains",
-      header: "Creative Domains",
-      render: (user) =>
-        user.creativeDomains?.length > 0 ? (
-          <span className="text-gray-600 text-sm">
-            {user.creativeDomains.join(", ")}
-          </span>
-        ) : (
-          <span className="text-gray-400">N/A</span>
-        ),
-    },
+ 
     {
       key: "phone",
       header: "Phone",
@@ -425,8 +446,8 @@ export default function RejectedUsersPage() {
                   }
                   disabled={pagination.page <= 1 || loading}
                   className={`px-3 py-1 bg-gray-200 rounded disabled:opacity-50 shadow-md ${pagination.page <= 1 || loading
-                      ? "cursor-not-allowed"
-                      : "cursor-pointer"
+                    ? "cursor-not-allowed"
+                    : "cursor-pointer"
                     }`}
                 >
                   Previous
@@ -444,8 +465,8 @@ export default function RejectedUsersPage() {
                   }
                   disabled={pagination.page >= pagination.totalPages || loading}
                   className={`px-3 py-1 bg-gray-200 rounded disabled:opacity-50 shadow-md ${pagination.page >= pagination.totalPages || loading
-                      ? "cursor-not-allowed"
-                      : "cursor-pointer"
+                    ? "cursor-not-allowed"
+                    : "cursor-pointer"
                     }`}
                 >
                   Next

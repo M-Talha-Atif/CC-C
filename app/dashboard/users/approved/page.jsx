@@ -7,7 +7,32 @@ import { SearchBar } from "../components/SearchBar";
 import { getApprovedUsers, getUserReferralUsage } from "../../../../action";
 import Toast from "../../../../components/Toast";
 import { Loader, Eye, MoreVertical } from "lucide-react";
-import { Camera, Video, Clipboard, Flower2 } from "lucide-react";
+
+import PhotographerIcon from "../components/icons/PhotographerIcon";
+import VideographerIcon from "../components/icons/VideographerIcon";
+import FloristIcon from "../components/icons/FloristIcon";
+import PlannerIcon from "../components/icons/PlannerIcon";
+
+
+
+const domainIconsMap = {
+  photography: <PhotographerIcon size={12} />,
+  videography: <VideographerIcon size={12} />,
+  florist: <FloristIcon size={12} />,
+  planner: <PlannerIcon size={12} />,
+};
+
+function getDomainIcons(domains) {
+  return domains
+    .map((domain) => domainIconsMap[domain.toLowerCase()] || null)
+    .filter(Boolean)
+    .map((icon, i) => (
+      <span key={i} className="inline-flex items-center mx-0.5">
+        {icon}
+      </span>
+    ));
+}
+
 
 // Modal Component
 const Modal = ({ isOpen, onClose, title, children, size = "md" }) => {
@@ -40,24 +65,6 @@ const Modal = ({ isOpen, onClose, title, children, size = "md" }) => {
     </div>
   );
 };
-
-const domainIconsMap = {
-  photography: <Camera size={16} />,
-  videography: <Video size={16} />,
-  florist: <Flower2 size={16} />,
-  planner: <Clipboard size={16} />,
-};
-
-function getDomainIcons(domains) {
-  return domains
-    .map((domain) => domainIconsMap[domain.toLowerCase()] || null)
-    .filter(Boolean)
-    .map((icon, i) => (
-      <span key={i} className="mx-1">
-        {icon}
-      </span>
-    ));
-}
 
 const ActionsDropdown = ({ onViewUsage, loading = false }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -234,24 +241,24 @@ export default function ApprovedUsersPage() {
     {
       key: "email",
       header: "Email",
-    render: (user) => (
-  <div className="relative inline-block">
-    <div
-      className="text-gray-600 cursor-pointer hover:text-blue-600"
-      onClick={() =>
-        setExpandedEmailId(expandedEmailId === user.id ? null : user.id)
-      }
-    >
-      {user.email}
-    </div>
+      render: (user) => (
+        <div className="relative inline-block">
+          <div
+            className="text-gray-600 cursor-pointer hover:text-blue-600 text-sm"
+            onClick={() =>
+              setExpandedEmailId(expandedEmailId === user.id ? null : user.id)
+            }
+          >
+            {user.email}
+          </div>
 
-    {expandedEmailId === user.id && user.phone && (
-      <div className="mt-1 text-xs text-gray-500 border rounded p-1 bg-gray-50 shadow-lg fixed left-4 right-4 sm:relative sm:left-auto sm:right-auto sm:mt-1 z-50">
-        📞 {user.phone}
-      </div>
-    )}
-  </div>
-),
+          {expandedEmailId === user.id && user.phone && (
+            <div className="mt-1 text-xs text-gray-500 border rounded p-1 bg-gray-50 shadow-lg fixed left-4 right-4 sm:relative sm:left-auto sm:right-auto sm:mt-1 z-50">
+              📞 {user.phone}
+            </div>
+          )}
+        </div>
+      ),
     }
     ,
     {
@@ -284,37 +291,43 @@ export default function ApprovedUsersPage() {
           : user.instagram;
 
         return (
-          <a
-            href={`https://instagram.com/${username}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:underline text-sm"
-          >
-            {user.instagram}
-          </a>
+          <div className="flex flex-col items-start">
+            <a
+              href={`https://instagram.com/${user.instagram}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline text-sm"
+            >
+              {user.instagram}
+            </a>
+
+            <div className="flex items-center gap-1 mt-0.5">
+              {getDomainIcons(user.creativeDomains)}
+            </div>
+          </div>
         );
       },
     },
-    {
-      key: "creativeDomains",
-      header: "Creative Domains",
-      render: (user) =>
-        user.creativeDomains?.length > 0 ? (
-          <span className="text-gray-600 text-sm">
-            {/* {user.creativeDomains.join(", ")} */}
-            {getDomainIcons(user.creativeDomains)}
-          </span>
-        ) : (
-          <span className="text-gray-400">N/A</span>
-        ),
-    },
-    {
-      key: "phone",
-      header: "Phone",
-      render: (user) => (
-        <div className="text-gray-600 text-sm">{user.phone || "N/A"}</div>
-      ),
-    },
+    // {
+    //   key: "creativeDomains",
+    //   header: "Creative Domains",
+    //   render: (user) =>
+    //     user.creativeDomains?.length > 0 ? (
+    //       <span className="text-gray-600 text-sm">
+    //         {/* {user.creativeDomains.join(", ")} */}
+    //         {getDomainIcons(user.creativeDomains)}
+    //       </span>
+    //     ) : (
+    //       <span className="text-gray-400">N/A</span>
+    //     ),
+    // },
+    // {
+    //   key: "phone",
+    //   header: "Phone",
+    //   render: (user) => (
+    //     <div className="text-gray-600 text-sm">{user.phone || "N/A"}</div>
+    //   ),
+    // },
     {
       key: "referralCode",
       header: "Referral Code",

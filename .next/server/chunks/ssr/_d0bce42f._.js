@@ -1295,6 +1295,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Toast$2e$jsx__
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$users$2f$components$2f$Popup$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/dashboard/users/components/Popup.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$referrals$2f$components$2f$Modal$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/dashboard/referrals/components/Modal.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/loader.js [app-ssr] (ecmascript) <export default as Loader>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$camera$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Camera$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/camera.js [app-ssr] (ecmascript) <export default as Camera>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$video$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Video$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/video.js [app-ssr] (ecmascript) <export default as Video>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clipboard$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clipboard$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/clipboard.js [app-ssr] (ecmascript) <export default as Clipboard>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$flower$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Flower2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/flower-2.js [app-ssr] (ecmascript) <export default as Flower2>");
 "use client";
 ;
 ;
@@ -1310,6 +1314,47 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 ;
+;
+const domainIconsMap = {
+    photography: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$camera$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Camera$3e$__["Camera"], {
+        size: 16
+    }, void 0, false, {
+        fileName: "[project]/app/dashboard/users/pending/page.jsx",
+        lineNumber: 24,
+        columnNumber: 16
+    }, this),
+    videography: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$video$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Video$3e$__["Video"], {
+        size: 16
+    }, void 0, false, {
+        fileName: "[project]/app/dashboard/users/pending/page.jsx",
+        lineNumber: 25,
+        columnNumber: 16
+    }, this),
+    florist: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$flower$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Flower2$3e$__["Flower2"], {
+        size: 16
+    }, void 0, false, {
+        fileName: "[project]/app/dashboard/users/pending/page.jsx",
+        lineNumber: 26,
+        columnNumber: 12
+    }, this),
+    planner: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clipboard$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clipboard$3e$__["Clipboard"], {
+        size: 16
+    }, void 0, false, {
+        fileName: "[project]/app/dashboard/users/pending/page.jsx",
+        lineNumber: 27,
+        columnNumber: 12
+    }, this)
+};
+function getDomainIcons(domains) {
+    return domains.map((domain)=>domainIconsMap[domain.toLowerCase()] || null).filter(Boolean).map((icon, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+            className: "mx-1",
+            children: icon
+        }, i, false, {
+            fileName: "[project]/app/dashboard/users/pending/page.jsx",
+            lineNumber: 35,
+            columnNumber: 7
+        }, this));
+}
 function PendingUsersPage() {
     const [users, setUsers] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const [filteredUsers, setFilteredUsers] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
@@ -1516,7 +1561,7 @@ function PendingUsersPage() {
                     children: user.createdAt ? new Date(user.createdAt).toLocaleDateString() : "N/A"
                 }, void 0, false, {
                     fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                    lineNumber: 272,
+                    lineNumber: 291,
                     columnNumber: 9
                 }, this)
         },
@@ -1532,7 +1577,7 @@ function PendingUsersPage() {
                             children: user.email
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                            lineNumber: 284,
+                            lineNumber: 303,
                             columnNumber: 11
                         }, this),
                         expandedEmailId === user.id && user.phone && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1543,13 +1588,13 @@ function PendingUsersPage() {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                            lineNumber: 294,
+                            lineNumber: 313,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                    lineNumber: 283,
+                    lineNumber: 302,
                     columnNumber: 9
                 }, this)
         },
@@ -1564,14 +1609,14 @@ function PendingUsersPage() {
                     children: user.website
                 }, void 0, false, {
                     fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                    lineNumber: 306,
+                    lineNumber: 325,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                     className: "text-gray-400",
                     children: "N/A"
                 }, void 0, false, {
                     fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                    lineNumber: 315,
+                    lineNumber: 334,
                     columnNumber: 11
                 }, this)
         },
@@ -1585,7 +1630,7 @@ function PendingUsersPage() {
                         children: "N/A"
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                        lineNumber: 323,
+                        lineNumber: 342,
                         columnNumber: 18
                     }, this);
                 }
@@ -1599,7 +1644,7 @@ function PendingUsersPage() {
                     children: user.instagram
                 }, void 0, false, {
                     fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                    lineNumber: 333,
+                    lineNumber: 352,
                     columnNumber: 11
                 }, this);
             }
@@ -1609,17 +1654,17 @@ function PendingUsersPage() {
             header: "Creative Domains",
             render: (user)=>user.creativeDomains?.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                     className: "text-gray-600",
-                    children: user.creativeDomains.join(", ")
+                    children: getDomainIcons(user.creativeDomains)
                 }, void 0, false, {
                     fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                    lineNumber: 349,
+                    lineNumber: 368,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                     className: "text-gray-400",
                     children: "N/A"
                 }, void 0, false, {
                     fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                    lineNumber: 353,
+                    lineNumber: 372,
                     columnNumber: 11
                 }, this)
         },
@@ -1631,7 +1676,7 @@ function PendingUsersPage() {
                     children: user.phone || "N/A"
                 }, void 0, false, {
                     fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                    lineNumber: 360,
+                    lineNumber: 379,
                     columnNumber: 9
                 }, this)
         },
@@ -1645,7 +1690,7 @@ function PendingUsersPage() {
                         children: "N/A"
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                        lineNumber: 368,
+                        lineNumber: 387,
                         columnNumber: 18
                     }, this);
                 }
@@ -1657,12 +1702,12 @@ function PendingUsersPage() {
                             children: "Admin"
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                            lineNumber: 374,
+                            lineNumber: 393,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                        lineNumber: 373,
+                        lineNumber: 392,
                         columnNumber: 13
                     }, this);
                 }
@@ -1676,7 +1721,7 @@ function PendingUsersPage() {
                             children: user.referralCodeOwner.email
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                            lineNumber: 384,
+                            lineNumber: 403,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1685,13 +1730,13 @@ function PendingUsersPage() {
                             children: user.referralCodeOwner.instagram || "N/A"
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                            lineNumber: 390,
+                            lineNumber: 409,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                    lineNumber: 380,
+                    lineNumber: 399,
                     columnNumber: 11
                 }, this);
             }
@@ -1707,7 +1752,7 @@ function PendingUsersPage() {
                     rejectLoading: isUserActionLoading(user.id, "reject")
                 }, void 0, false, {
                     fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                    lineNumber: 404,
+                    lineNumber: 423,
                     columnNumber: 9
                 }, this)
         }
@@ -1719,17 +1764,17 @@ function PendingUsersPage() {
                 className: "max-w-7xl mx-auto",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$LoadingSpinner$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["LoadingSpinner"], {}, void 0, false, {
                     fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                    lineNumber: 419,
+                    lineNumber: 438,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                lineNumber: 418,
+                lineNumber: 437,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/dashboard/users/pending/page.jsx",
-            lineNumber: 417,
+            lineNumber: 436,
             columnNumber: 7
         }, this);
     }
@@ -1742,7 +1787,7 @@ function PendingUsersPage() {
                 onClose: ()=>setToast(null)
             }, void 0, false, {
                 fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                lineNumber: 428,
+                lineNumber: 447,
                 columnNumber: 9
             }, this),
             showLimitPopup && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$users$2f$components$2f$Popup$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1751,7 +1796,7 @@ function PendingUsersPage() {
                 onClose: handleLimitPopupClose
             }, void 0, false, {
                 fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                lineNumber: 436,
+                lineNumber: 455,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1765,7 +1810,7 @@ function PendingUsersPage() {
                                 children: "Pending User Approvals"
                             }, void 0, false, {
                                 fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                lineNumber: 444,
+                                lineNumber: 463,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1773,13 +1818,13 @@ function PendingUsersPage() {
                                 children: "Review and approve or reject pending user registrations"
                             }, void 0, false, {
                                 fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                lineNumber: 447,
+                                lineNumber: 466,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                        lineNumber: 443,
+                        lineNumber: 462,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1791,12 +1836,12 @@ function PendingUsersPage() {
                             className: "w-full max-w-md"
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                            lineNumber: 453,
+                            lineNumber: 472,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                        lineNumber: 452,
+                        lineNumber: 471,
                         columnNumber: 9
                     }, this),
                     selectedUsers.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1808,12 +1853,12 @@ function PendingUsersPage() {
                             loading: bulkLoading
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                            lineNumber: 463,
+                            lineNumber: 482,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                        lineNumber: 462,
+                        lineNumber: 481,
                         columnNumber: 11
                     }, this),
                     filteredUsers.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$users$2f$components$2f$DataTable$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DataTable"], {
@@ -1825,27 +1870,27 @@ function PendingUsersPage() {
                         className: "bg-white border border-gray-200 rounded-lg shadow-sm"
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                        lineNumber: 473,
+                        lineNumber: 492,
                         columnNumber: 11
                     }, this) : searchQuery ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$users$2f$components$2f$EmptyState$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["EmptyState"], {
                         title: "No users found",
                         description: "No pending users match your search criteria."
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                        lineNumber: 482,
+                        lineNumber: 501,
                         columnNumber: 11
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$users$2f$components$2f$EmptyState$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["EmptyState"], {
                         title: "No pending users",
                         description: "There are no users waiting for approval at the moment."
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                        lineNumber: 487,
+                        lineNumber: 506,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                lineNumber: 442,
+                lineNumber: 461,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$dashboard$2f$referrals$2f$components$2f$Modal$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1873,7 +1918,7 @@ function PendingUsersPage() {
                                                     children: "Total Usage:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                                    lineNumber: 511,
+                                                    lineNumber: 530,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1881,13 +1926,13 @@ function PendingUsersPage() {
                                                     children: Array.isArray(usageData) ? usageData.length : 0
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                                    lineNumber: 514,
+                                                    lineNumber: 533,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                            lineNumber: 510,
+                                            lineNumber: 529,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1898,7 +1943,7 @@ function PendingUsersPage() {
                                                     children: "Code Owner:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                                    lineNumber: 519,
+                                                    lineNumber: 538,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1906,24 +1951,24 @@ function PendingUsersPage() {
                                                     children: selectedUser.referralCodeOwner?.email || "N/A"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                                    lineNumber: 522,
+                                                    lineNumber: 541,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                            lineNumber: 518,
+                                            lineNumber: 537,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                    lineNumber: 509,
+                                    lineNumber: 528,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                lineNumber: 508,
+                                lineNumber: 527,
                                 columnNumber: 13
                             }, this),
                             usageLoading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1933,20 +1978,20 @@ function PendingUsersPage() {
                                         className: "h-6 w-6 animate-spin mr-2"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                        lineNumber: 532,
+                                        lineNumber: 551,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: "Loading usage data..."
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                        lineNumber: 533,
+                                        lineNumber: 552,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                lineNumber: 531,
+                                lineNumber: 550,
                                 columnNumber: 13
                             }, this) : !Array.isArray(usageData) || usageData.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "text-center py-8",
@@ -1956,7 +2001,7 @@ function PendingUsersPage() {
                                         children: "No usage data found for this referral code"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                        lineNumber: 537,
+                                        lineNumber: 556,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1964,13 +2009,13 @@ function PendingUsersPage() {
                                         children: "This code hasn't been used by any users yet."
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                        lineNumber: 540,
+                                        lineNumber: 559,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                lineNumber: 536,
+                                lineNumber: 555,
                                 columnNumber: 13
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "space-y-3",
@@ -1980,7 +2025,7 @@ function PendingUsersPage() {
                                         children: "Users who used this code:"
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                        lineNumber: 546,
+                                        lineNumber: 565,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1996,7 +2041,7 @@ function PendingUsersPage() {
                                                                 children: usage.user?.email || "No email"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                                                lineNumber: 556,
+                                                                lineNumber: 575,
                                                                 columnNumber: 23
                                                             }, this),
                                                             (usage.user?.firstName || usage.user?.lastName) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2007,7 +2052,7 @@ function PendingUsersPage() {
                                                                 ].filter(Boolean).join(" ")
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                                                lineNumber: 560,
+                                                                lineNumber: 579,
                                                                 columnNumber: 25
                                                             }, this),
                                                             usage.referralLevel && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2018,13 +2063,13 @@ function PendingUsersPage() {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                                                lineNumber: 567,
+                                                                lineNumber: 586,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                                        lineNumber: 555,
+                                                        lineNumber: 574,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2039,7 +2084,7 @@ function PendingUsersPage() {
                                                                 }) : "Unknown"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                                                lineNumber: 573,
+                                                                lineNumber: 592,
                                                                 columnNumber: 23
                                                             }, this),
                                                             parseFloat(usage.pointsToUser) > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2051,36 +2096,36 @@ function PendingUsersPage() {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                                                lineNumber: 583,
+                                                                lineNumber: 602,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                                        lineNumber: 572,
+                                                        lineNumber: 591,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, usage.id || `usage-${index}`, true, {
                                                 fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                                lineNumber: 551,
+                                                lineNumber: 570,
                                                 columnNumber: 19
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                        lineNumber: 549,
+                                        lineNumber: 568,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                                lineNumber: 545,
+                                lineNumber: 564,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                        lineNumber: 506,
+                        lineNumber: 525,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2095,24 +2140,24 @@ function PendingUsersPage() {
                             children: "Close"
                         }, void 0, false, {
                             fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                            lineNumber: 595,
+                            lineNumber: 614,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                        lineNumber: 594,
+                        lineNumber: 613,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/dashboard/users/pending/page.jsx",
-                lineNumber: 495,
+                lineNumber: 514,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/dashboard/users/pending/page.jsx",
-        lineNumber: 426,
+        lineNumber: 445,
         columnNumber: 5
     }, this);
 }
