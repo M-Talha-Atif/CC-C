@@ -31,10 +31,10 @@ export function ApprovedUsersTable({ data, columns, className = "" }) {
       case "points":
         return "w-24";
       case "referralCode":
-        return "w-32";
+        return "w-20";
       case "createdAt":
       case "joined":
-        return "w-18";
+        return "w-24";
       case "email":
         return "w-60";
       case "name":
@@ -43,7 +43,7 @@ export function ApprovedUsersTable({ data, columns, className = "" }) {
         return "min-w-[11rem]";
       case "website":
       case "instagram":
-        return "w-50";
+        return "w-59";
       default:
         return "w-10";
     }

@@ -17,6 +17,7 @@ import PhotographerIcon from "../components/icons/PhotographerIcon";
 import VideographerIcon from "../components/icons/VideographerIcon";
 import FloristIcon from "../components/icons/FloristIcon";
 import PlannerIcon from "../components/icons/PlannerIcon";
+import OwnerEmailModal from "../components/OwnerEmailModal";
 
 
 
@@ -27,7 +28,7 @@ const domainIconsMap = {
   planner: <PlannerIcon size={12} />,
 };
 
-export function getDomainIcons(domains) {
+function getDomainIcons(domains) {
   return domains
     .map((domain) => domainIconsMap[domain.toLowerCase()] || null)
     .filter(Boolean)
@@ -165,30 +166,37 @@ export default function RejectedUsersPage() {
   const [isLoadingReferralData, setIsLoadingReferralData] = useState(false);
 
   const [expandedEmailId, setExpandedEmailId] = useState(null);
+  const [usageLoading, setUsageLoading] = useState(false);
+  const [showUsageModal, setShowUsageModal] = useState(false);
+  const [usageData, setUsageData] = useState([]);
+  const [showOwnerModal, setShowOwnerModal] = useState(false);
+  const [ownerRefferal, setOwner] = useState(null);
+
+  const handleShowOwnerEmail = (owner) => {
+    setOwner(owner)
+    setShowOwnerModal(true);
+  };
+
 
   const handleViewReferralUsage = async (user) => {
-    if (!user.referralCodeOwner || user.referralCodeOwner.type === "admin") {
-      return;
-    }
-
     try {
-      setIsLoadingReferralData(true);
-      setCurrentReferralUser(user);
-      setIsReferralModalOpen(true);
+      setUsageLoading(true);
+      setSelectedUser(user);
+      setShowUsageModal(true);
 
       const response = await getUserReferralUsage({
-        userId: user.referralCodeOwner.id,
+        userId: user.id,
         page: 1,
         limit: 50,
       });
 
-      setReferralUsageList(response.data.data || []);
+      setUsageData(response.data.data || []);
     } catch (error) {
       console.error("Error loading usage data:", error);
       showToast("Failed to load referral usage", "error");
-      setReferralUsageList([]);
+      setUsageData([]);
     } finally {
-      setIsLoadingReferralData(false);
+      setUsageLoading(false);
     }
   };
 
@@ -263,27 +271,33 @@ export default function RejectedUsersPage() {
         </div>
       ),
     },
-    {
+     {
       key: "email",
       header: "Email",
-      render: (user) => (
-        <div className="relative inline-block">
-          <div
-            className="text-gray-600 cursor-pointer hover:text-blue-600"
-            onClick={() =>
-              setExpandedEmailId(expandedEmailId === user.id ? null : user.id)
-            }
-          >
-            {user.email}
-          </div>
-
-          {expandedEmailId === user.id && user.phone && (
-            <div className="mt-1 text-xs text-gray-500 border rounded p-1 bg-gray-50 shadow-lg fixed left-4 right-4 sm:relative sm:left-auto sm:right-auto sm:mt-1 z-50">
-              📞 {user.phone}
+      render: (user) => {
+        const isOpen = expandedEmailId === user.id;
+        return (
+          <div className="relative inline-block">
+            <div
+              className="flex items-center gap-1 text-gray-600 cursor-pointer hover:text-blue-600 text-sm"
+              onClick={() =>
+                setExpandedEmailId(isOpen ? null : user.id)
+              }
+            >
+              {user.email}
+              <span className={`transition-transform ${isOpen ? "rotate-90" : ""}`}>
+                ▶
+              </span>
             </div>
-          )}
-        </div>
-      ),
+
+            {isOpen && user.phone && (
+              <div className="mt-1 text-xs text-gray-500 border rounded p-1 bg-gray-50 shadow-lg fixed left-4 right-4 sm:relative sm:left-auto sm:right-auto sm:mt-1 z-50">
+                📞 {user.phone}
+              </div>
+            )}
+          </div>
+        );
+      },
     },
     {
       key: "website",
@@ -333,46 +347,25 @@ export default function RejectedUsersPage() {
         );
       },
     },
- 
-    {
-      key: "phone",
-      header: "Phone",
-      render: (user) => (
-        <div className="text-gray-600 text-sm">{user.phone || "N/A"}</div>
-      ),
-    },
+
     {
       key: "referralCode",
       header: "Referral Code",
       render: (user) => {
-        if (!user.referralCodeOwner) {
-          return <span className="text-gray-400">N/A</span>;
-        }
+        const owner = user.referralCodeOwner;
 
-        if (user.referralCodeOwner.type === "admin") {
-          return (
-            <div className="text-gray-600">
-              <div className="font-semibold">Admin</div>
-            </div>
-          );
+        if (!owner) {
+          return <span className="text-gray-400">N/A</span>;
         }
 
         return (
           <div
-            className="max-w-[220px] cursor-pointer"
-            onClick={() => handleViewReferralUsage(user)}
+            className="cursor-pointer max-w-[240px]"
+            onClick={() => handleShowOwnerEmail(user.referralCodeOwner)}
           >
-            <div
-              className="text-sm text-gray-600 truncate"
-              title={user.referralCodeOwner.email}
-            >
-              {user.referralCodeOwner.email}
-            </div>
-            <div
-              className="text-sm text-blue-600 truncate"
-              title={user.referralCodeOwner.instagram || "N/A"}
-            >
-              {user.referralCodeOwner.instagram || "N/A"}
+
+            <div className="text-sm font-semibold text-blue-600">
+              {owner.code || "N/A"}
             </div>
           </div>
         );
@@ -499,21 +492,20 @@ export default function RejectedUsersPage() {
         message={`Are you sure you want to delete ${selectedUser?.email}? This action cannot be undone.`}
         loading={deleteLoading}
       />
-
       {/* Referral Usage Modal */}
       <Modal
-        isOpen={isReferralModalOpen}
+        isOpen={showUsageModal}
         onClose={() => {
-          setIsReferralModalOpen(false);
-          setCurrentReferralUser(null);
-          setReferralUsageList([]);
+          setShowUsageModal(false);
+          setSelectedUser(null);
+          setUsageData([]);
         }}
-        title={`Referral Code: ${currentReferralUser?.referralCodeOwner?.code || "N/A"
+        title={`Referral Code: ${selectedUser?.referralCodeOwner?.code || "N/A"
           }`}
         size="lg"
       >
         <div className="space-y-4">
-          {currentReferralUser && (
+          {selectedUser && (
             <div className="bg-gray-50 p-4 rounded-lg">
               <div className="flex items-center justify-between">
                 <div>
@@ -521,9 +513,7 @@ export default function RejectedUsersPage() {
                     Total Usage:
                   </div>
                   <div className="text-2xl font-bold text-gray-900">
-                    {Array.isArray(referralUsageList)
-                      ? referralUsageList.length
-                      : 0}
+                    {Array.isArray(usageData) ? usageData.length : 0}
                   </div>
                 </div>
                 <div className="text-right">
@@ -531,20 +521,19 @@ export default function RejectedUsersPage() {
                     Code Owner:
                   </div>
                   <div className="font-medium text-gray-900  max-w-[340px] break-words">
-                    {currentReferralUser.referralCodeOwner?.email || "N/A"}
+                    {selectedUser.referralCodeOwner?.email || "N/A"}
                   </div>
                 </div>
               </div>
             </div>
           )}
 
-          {isLoadingReferralData ? (
+          {usageLoading ? (
             <div className="flex items-center justify-center py-8">
               <Loader className="h-6 w-6 animate-spin mr-2" />
               <span>Loading usage data...</span>
             </div>
-          ) : !Array.isArray(referralUsageList) ||
-            referralUsageList.length === 0 ? (
+          ) : !Array.isArray(usageData) || usageData.length === 0 ? (
             <div className="text-center py-8">
               <div className="text-gray-500 mb-2">
                 No usage data found for this referral code
@@ -559,13 +548,16 @@ export default function RejectedUsersPage() {
                 Users who used this code:
               </div>
               <div className="space-y-2 max-h-[400px] overflow-y-auto">
-                {referralUsageList.map((usage, index) => (
+                {usageData.map((usage, index) => (
                   <div
                     key={usage.id || `usage-${index}`}
                     className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                   >
                     <div className="flex-1">
-                      <div className="font-medium text-sm text-gray-900 truncate">
+                      <div
+                        className="font-medium text-sm text-gray-900 line-clamp-2 break-all"
+                        title={usage.user?.email}
+                      >
                         {usage.user?.email || "No email"}
                       </div>
                       {(usage.user?.firstName || usage.user?.lastName) && (
@@ -606,16 +598,25 @@ export default function RejectedUsersPage() {
         <div className="mt-6">
           <button
             onClick={() => {
-              setIsReferralModalOpen(false);
-              setCurrentReferralUser(null);
-              setReferralUsageList([]);
+              setShowUsageModal(false);
+              setSelectedUser(null);
+              setUsageData([]);
             }}
             className="w-full bg-gray-300 hover:bg-gray-400 shadow-sm px-5 py-2 rounded-xl cursor-pointer transition-colors"
           >
             Close
           </button>
         </div>
+
+
       </Modal>
+
+      <OwnerEmailModal
+        isOpen={showOwnerModal}
+        onClose={() => setShowOwnerModal(false)}
+        owner={ownerRefferal}
+
+      />
     </div>
   );
 }

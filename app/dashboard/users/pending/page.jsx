@@ -22,6 +22,7 @@ import PhotographerIcon from "../components/icons/PhotographerIcon";
 import VideographerIcon from "../components/icons/VideographerIcon";
 import FloristIcon from "../components/icons/FloristIcon";
 import PlannerIcon from "../components/icons/PlannerIcon";
+import OwnerEmailModal from "../components/OwnerEmailModal";
 
 
 
@@ -61,35 +62,17 @@ export default function PendingUsersPage() {
   const [usageLoading, setUsageLoading] = useState(false);
   const [expandedEmailId, setExpandedEmailId] = useState(null);
 
-  const showToast = (message, type = "info") => {
-    setToast({ message, type });
+  const [showOwnerModal, setShowOwnerModal] = useState(false);
+  const [ownerRefferal, setOwner] = useState(null);
+
+  const handleShowOwnerEmail = (owner) => {
+    setOwner(owner)
+    setShowOwnerModal(true);
   };
 
-  const handleViewReferralUsage = async (user) => {
-    if (!user.referralCodeOwner || user.referralCodeOwner.type === "admin") {
-      return;
-    }
 
-    try {
-      setUsageLoading(true);
-      setSelectedUser(user);
-      setShowUsageModal(true);
-
-      // Find the user who owns this referral code
-      const response = await getUserReferralUsage({
-        userId: user.referralCodeOwner.id, // You'll need to pass the owner's ID
-        page: 1,
-        limit: 50,
-      });
-
-      setUsageData(response.data.data || []);
-    } catch (error) {
-      console.error("Error loading usage data:", error);
-      showToast("Failed to load referral usage", "error");
-      setUsageData([]);
-    } finally {
-      setUsageLoading(false);
-    }
+  const showToast = (message, type = "info") => {
+    setToast({ message, type });
   };
 
   const setUserActionLoading = (userId, action, isLoading) => {
@@ -227,6 +210,7 @@ export default function PendingUsersPage() {
     }
   };
 
+
   const handleBulkApprove = async () => {
     if (selectedUsers.length === 0) return;
 
@@ -289,6 +273,33 @@ export default function PendingUsersPage() {
     }
   };
 
+  const handleViewReferralUsage = async (user) => {
+    if (!user.referralCodeOwner || user.referralCodeOwner.type === "admin") {
+      return;
+    }
+
+    try {
+      setUsageLoading(true);
+      setSelectedUser(user);
+      setShowUsageModal(true);
+
+      // Find the user who owns this referral code
+      const response = await getUserReferralUsage({
+        userId: user.referralCodeOwner.id, // You'll need to pass the owner's ID
+        page: 1,
+        limit: 50,
+      });
+
+      setUsageData(response.data.data || []);
+    } catch (error) {
+      console.error("Error loading usage data:", error);
+      showToast("Failed to load referral usage", "error");
+      setUsageData([]);
+    } finally {
+      setUsageLoading(false);
+    }
+  };
+
   const columns = [
     {
       key: "registrationDate",
@@ -301,27 +312,33 @@ export default function PendingUsersPage() {
         </div>
       ),
     },
-    {
+   {
       key: "email",
       header: "Email",
-      render: (user) => (
-        <div className="relative inline-block">
-          <div
-            className="text-gray-600 cursor-pointer hover:text-blue-600"
-            onClick={() =>
-              setExpandedEmailId(expandedEmailId === user.id ? null : user.id)
-            }
-          >
-            {user.email}
-          </div>
-
-          {expandedEmailId === user.id && user.phone && (
-            <div className="mt-1 text-xs text-gray-500 border rounded p-1 bg-gray-50 shadow-lg fixed left-4 right-4 sm:relative sm:left-auto sm:right-auto sm:mt-1 z-50">
-              📞 {user.phone}
+      render: (user) => {
+        const isOpen = expandedEmailId === user.id;
+        return (
+          <div className="relative inline-block">
+            <div
+              className="flex items-center gap-1 text-gray-600 cursor-pointer hover:text-blue-600 text-sm"
+              onClick={() =>
+                setExpandedEmailId(isOpen ? null : user.id)
+              }
+            >
+              {user.email}
+              <span className={`transition-transform ${isOpen ? "rotate-90" : ""}`}>
+                ▶
+              </span>
             </div>
-          )}
-        </div>
-      ),
+
+            {isOpen && user.phone && (
+              <div className="mt-1 text-xs text-gray-500 border rounded p-1 bg-gray-50 shadow-lg fixed left-4 right-4 sm:relative sm:left-auto sm:right-auto sm:mt-1 z-50">
+                📞 {user.phone}
+              </div>
+            )}
+          </div>
+        );
+      },
     },
     {
       key: "website",
@@ -384,45 +401,30 @@ export default function PendingUsersPage() {
     //       <span className="text-gray-400">N/A</span>
     //     ),
     // },
-    {
-      key: "phone",
-      header: "Phone",
-      render: (user) => (
-        <div className="text-gray-600">{user.phone || "N/A"}</div>
-      ),
-    },
+    // {
+    //   key: "phone",
+    //   header: "Phone",
+    //   render: (user) => (
+    //     <div className="text-gray-600">{user.phone || "N/A"}</div>
+    //   ),
+    // },
     {
       key: "referralCode",
       header: "Referral Code",
       render: (user) => {
-        if (!user.referralCodeOwner) {
-          return <span className="text-gray-400">N/A</span>;
-        }
+        const owner = user.referralCodeOwner;
 
-        if (user.referralCodeOwner.type === "admin") {
-          return (
-            <div className="text-gray-600">
-              <div className="font-semibold">Admin</div>
-            </div>
-          );
+        if (!owner) {
+          return <span className="text-gray-400">N/A</span>;
         }
 
         return (
           <div
-            className="cursor-pointer hover:bg-gray-50 p-2 rounded transition-colors"
-            onClick={() => handleViewReferralUsage(user)}
+            className="cursor-pointer max-w-[240px]"
+            onClick={() => handleShowOwnerEmail(user.referralCodeOwner)}
           >
-            <div
-              className="text-sm text-gray-600 max-w-[200px] truncate"
-              title={user.referralCodeOwner.email}
-            >
-              {user.referralCodeOwner.email}
-            </div>
-            <div
-              className="text-sm text-blue-600 truncate max-w-[200px]"
-              title={user.referralCodeOwner.instagram || "N/A"}
-            >
-              {user.referralCodeOwner.instagram || "N/A"}
+            <div className="text-sm font-semibold text-blue-600">
+              {owner.code || "N/A"}
             </div>
           </div>
         );
@@ -584,7 +586,10 @@ export default function PendingUsersPage() {
                     className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                   >
                     <div className="flex-1">
-                      <div className="font-medium text-sm text-gray-900 truncate">
+                      <div
+                        className="font-medium text-sm text-gray-900 line-clamp-2 break-all"
+                        title={usage.user?.email}
+                      >
                         {usage.user?.email || "No email"}
                       </div>
                       {(usage.user?.firstName || usage.user?.lastName) && (
@@ -635,6 +640,13 @@ export default function PendingUsersPage() {
           </button>
         </div>
       </Modal>
+
+      <OwnerEmailModal
+        isOpen={showOwnerModal}
+        onClose={() => setShowOwnerModal(false)}
+        owner={ownerRefferal}
+
+      />
     </div>
   );
 }

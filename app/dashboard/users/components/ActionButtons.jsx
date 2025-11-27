@@ -32,7 +32,7 @@ export function ActionButtons({
   deleteLoading = false,
 }) {
   return (
-    <div className="flex space-x-2">
+    <div className="flex flex-col space-y-2">
       {showApproveReject && (
         <>
           <button

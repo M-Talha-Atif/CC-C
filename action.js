@@ -15,6 +15,7 @@ export const login = async ({ email, password }) => {
         },
       }
     );
+    console.log(response)
 
     const { data } = response;
 
@@ -70,6 +71,8 @@ export const logout = async () => {
     return { success: false };
   }
 };
+
+
 
 export const refreshTokenServer = async () => {
   try {
@@ -149,6 +152,102 @@ const makeAuthenticatedRequest = async (url, options = {}) => {
     throw error;
   }
 };
+
+
+/**
+ * Initiates password reset process
+ * @param {string} email - User's email address
+ * @returns {Promise<Object>} Response object
+ */
+export const forgotPasswordAdmin = async (email) => {
+  try {
+    console.log('[Forgot Password] Initiating password reset for:', email);
+
+    const result = await makeAuthenticatedRequest(
+      `${process.env.NEXT_PUBLIC_BASE_URL}api/auth/forgot-password`,
+      {
+        method: "POST",
+        data: { email },
+      }
+    );
+
+    if (result.success) {
+      console.log('[Forgot Password] Reset email sent successfully');
+      return {
+        success: true,
+        message: result.data.message || "Password reset email sent successfully",
+        tokenSent: result.data.data?.tokenSent || false,
+      };
+    }
+
+    throw new Error("Failed to send reset email");
+  } catch (error) {
+    console.error("[Forgot Password] Error:", error);
+
+    // Extract error message from axios error response
+    const errorMessage =
+      error.response?.data?.message ||
+      error.message ||
+      "Failed to send reset email. Please try again.";
+
+    return {
+      success: false,
+      message: errorMessage,
+    };
+  }
+};
+
+/**
+ * Resets password using token
+ * @param {string} token - Reset token from email
+ * @param {string} newPassword - New password
+ * @returns {Promise<Object>} Response object
+ */
+export const resetPasswordWithToken = async (token, newPassword) => {
+  try {
+    console.log('[Reset Password] Request payload:', {
+      token: token ? `${token.substring(0, 10)}...` : 'missing',
+      hasPassword: !!newPassword,
+      passwordLength: newPassword?.length
+    });
+
+    const result = await makeAuthenticatedRequest(
+      `${process.env.NEXT_PUBLIC_BASE_URL}api/auth/reset-password`,
+      {
+        method: "POST",
+        data: {
+          token: token,
+          password: newPassword
+        },
+      }
+    );
+
+    if (result.success) {
+      console.log('[Reset Password] Password reset successful');
+      return {
+        success: true,
+        message: result.data.message || "Password reset successful",
+      };
+    }
+
+    throw new Error("Failed to reset password");
+  } catch (error) {
+    console.error("[Reset Password] Error:", error);
+
+    // Extract error message from axios error response
+    const errorMessage =
+      error.response?.data?.message ||
+      error.message ||
+      "Failed to reset password. Please try again.";
+
+    return {
+      success: false,
+      message: errorMessage,
+    };
+  }
+};
+
+
 // Get referral codes with filters
 export const getReferralCodes = async ({
   page = 1,
@@ -166,8 +265,7 @@ export const getReferralCodes = async ({
   });
 
   const result = await makeAuthenticatedRequest(
-    `${
-      process.env.NEXT_PUBLIC_BASE_URL
+    `${process.env.NEXT_PUBLIC_BASE_URL
     }api/admin/referral-codes?${queryParams.toString()}`,
     {
       method: "GET",
@@ -196,8 +294,7 @@ export const getUsers = async ({
   });
 
   const result = await makeAuthenticatedRequest(
-    `${
-      process.env.NEXT_PUBLIC_BASE_URL
+    `${process.env.NEXT_PUBLIC_BASE_URL
     }api/admin/users?${queryParams.toString()}`,
     {
       method: "GET",
@@ -398,8 +495,7 @@ export const getReferralAnalytics = async ({
   });
 
   const result = await makeAuthenticatedRequest(
-    `${
-      process.env.NEXT_PUBLIC_BASE_URL
+    `${process.env.NEXT_PUBLIC_BASE_URL
     }api/admin/referral-analytics?${queryParams.toString()}`,
     {
       method: "GET",
@@ -428,8 +524,7 @@ export const getReferralUsage = async ({
   });
 
   const result = await makeAuthenticatedRequest(
-    `${
-      process.env.NEXT_PUBLIC_BASE_URL
+    `${process.env.NEXT_PUBLIC_BASE_URL
     }api/admin/referral-usage?${queryParams.toString()}`,
     {
       method: "GET",
@@ -563,6 +658,8 @@ export const getUserReferralUsage = async ({
     page: page.toString(),
     limit: limit.toString(),
   });
+
+  console.log(userId)
 
   const result = await makeAuthenticatedRequest(
     `${process.env.NEXT_PUBLIC_BASE_URL}api/admin/users/${userId}/referral-usage?${params}`,

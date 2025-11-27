@@ -93,7 +93,7 @@ module.exports = mod;
 
 var { g: global, __dirname } = __turbopack_context__;
 {
-/* __next_internal_action_entry_do_not_use__ [{"7f096e46829575edddc45bb2811e1168227e7d276c":"deleteUser","7f13bffc63cf5335e337f22081fafd35d4fad7ea81":"getUsers","7f1e2bb3b6854e1cd38654ca6bf60354bc16b8a9cf":"unassignReferralCode","7f2811cc40e639d3b5cbf529c06b8c3b74c43b9e76":"rejectUser","7f3741827c3f5d46a4d853a3880fffa3db69efb0f5":"getAllUsersWithStatus","7f4ea68bc907082c24cd61912e059769f7e55caf8e":"getReferralCodeById","7f4f50219cd21575d54d9bc68743302ec4e599d211":"getUserReferralUsage","7f5b7649f825616330773b3bfcf323a2d14c7a0544":"getReferralUsage","7f634046f827e92794253bb3d9a7f38597523d3f9c":"logout","7f68bae5c2aea64111ce913ea84e3ae85c8a9d2cfc":"bulkAssignReferralCodes","7f6dce953196bda0c3c48bfb1528aceb2dd46d5ca6":"getReferralCodes","7f6f24e6cbd1b3fa3c55b67d3ffbf2c3b0c07d14b6":"getApprovedUsers","7f746c1d769e19f7351c95a34c6d96484824eb200b":"updateUserPoints","7f98ef1a78c445d8fdbf78325bb301ad4572016776":"assignReferralCode","7fac116abffd0d72a56c3d6979d040c5bfda37c582":"createReferralCode","7fadcf3ba5f81b4fdda32309ce34eb5db0e14d0707":"bulkUpdateUserStatus","7faf55d4a5250e32d7c281615d6cdd202c2e9af8fd":"login","7fb3afb859c050d31294fe51765501edcc95f80178":"bulkCreateReferralCodes","7fca85de0f604c5ae92a80abf071d0306631d57522":"approveUser","7fcc76b31d08b05a4156f910b46f92525464ba44c6":"getPendingUsers","7fd9750286bc4a1f35159202aff2e4514a940ede5f":"getReferralAnalytics","7fdb89417200e76198de656a4aea5446c994abc42f":"getRejectedUsers","7fe0783bba1a10f1d4244de8d4a070c14f79d53c16":"updateReferralCode","7fe3ebac4614d3a31e324dc20bd3304d15de14b6d4":"deleteReferralCode","7ff81f74be8868f15383cf98a71533f61625c2c70c":"refreshTokenServer","7ffc33e0be18affc83238ecc1a936c146732872289":"getUserById"},"",""] */ __turbopack_context__.s({
+/* __next_internal_action_entry_do_not_use__ [{"7f096e46829575edddc45bb2811e1168227e7d276c":"deleteUser","7f13bffc63cf5335e337f22081fafd35d4fad7ea81":"getUsers","7f1e2bb3b6854e1cd38654ca6bf60354bc16b8a9cf":"unassignReferralCode","7f2811cc40e639d3b5cbf529c06b8c3b74c43b9e76":"rejectUser","7f33471bad80cdd3d4283a09a427be9d5071d8ed4f":"resetPasswordWithToken","7f3741827c3f5d46a4d853a3880fffa3db69efb0f5":"getAllUsersWithStatus","7f4ea68bc907082c24cd61912e059769f7e55caf8e":"getReferralCodeById","7f4f50219cd21575d54d9bc68743302ec4e599d211":"getUserReferralUsage","7f5b7649f825616330773b3bfcf323a2d14c7a0544":"getReferralUsage","7f634046f827e92794253bb3d9a7f38597523d3f9c":"logout","7f68bae5c2aea64111ce913ea84e3ae85c8a9d2cfc":"bulkAssignReferralCodes","7f6dce953196bda0c3c48bfb1528aceb2dd46d5ca6":"getReferralCodes","7f6f24e6cbd1b3fa3c55b67d3ffbf2c3b0c07d14b6":"getApprovedUsers","7f746c1d769e19f7351c95a34c6d96484824eb200b":"updateUserPoints","7f98ef1a78c445d8fdbf78325bb301ad4572016776":"assignReferralCode","7fa264b0eb4e14f9511b5952c5a0889e9f1b7b6469":"forgotPasswordAdmin","7fac116abffd0d72a56c3d6979d040c5bfda37c582":"createReferralCode","7fadcf3ba5f81b4fdda32309ce34eb5db0e14d0707":"bulkUpdateUserStatus","7faf55d4a5250e32d7c281615d6cdd202c2e9af8fd":"login","7fb3afb859c050d31294fe51765501edcc95f80178":"bulkCreateReferralCodes","7fca85de0f604c5ae92a80abf071d0306631d57522":"approveUser","7fcc76b31d08b05a4156f910b46f92525464ba44c6":"getPendingUsers","7fd9750286bc4a1f35159202aff2e4514a940ede5f":"getReferralAnalytics","7fdb89417200e76198de656a4aea5446c994abc42f":"getRejectedUsers","7fe0783bba1a10f1d4244de8d4a070c14f79d53c16":"updateReferralCode","7fe3ebac4614d3a31e324dc20bd3304d15de14b6d4":"deleteReferralCode","7ff81f74be8868f15383cf98a71533f61625c2c70c":"refreshTokenServer","7ffc33e0be18affc83238ecc1a936c146732872289":"getUserById"},"",""] */ __turbopack_context__.s({
     "approveUser": (()=>approveUser),
     "assignReferralCode": (()=>assignReferralCode),
     "bulkAssignReferralCodes": (()=>bulkAssignReferralCodes),
@@ -102,6 +102,7 @@ var { g: global, __dirname } = __turbopack_context__;
     "createReferralCode": (()=>createReferralCode),
     "deleteReferralCode": (()=>deleteReferralCode),
     "deleteUser": (()=>deleteUser),
+    "forgotPasswordAdmin": (()=>forgotPasswordAdmin),
     "getAllUsersWithStatus": (()=>getAllUsersWithStatus),
     "getApprovedUsers": (()=>getApprovedUsers),
     "getPendingUsers": (()=>getPendingUsers),
@@ -117,6 +118,7 @@ var { g: global, __dirname } = __turbopack_context__;
     "logout": (()=>logout),
     "refreshTokenServer": (()=>refreshTokenServer),
     "rejectUser": (()=>rejectUser),
+    "resetPasswordWithToken": (()=>resetPasswordWithToken),
     "unassignReferralCode": (()=>unassignReferralCode),
     "updateReferralCode": (()=>updateReferralCode),
     "updateUserPoints": (()=>updateUserPoints)
@@ -143,6 +145,7 @@ const login = async ({ email, password })=>{
                 "Content-Type": "application/json"
             }
         });
+        console.log(response);
         const { data } = response;
         // Extract and manually set cookies from response
         const setCookieHeader = response.headers["set-cookie"];
@@ -261,6 +264,66 @@ const makeAuthenticatedRequest = async (url, options = {})=>{
         }
         // Throw axios error as-is so response data is preserved
         throw error;
+    }
+};
+const forgotPasswordAdmin = async (email)=>{
+    try {
+        console.log('[Forgot Password] Initiating password reset for:', email);
+        const result = await makeAuthenticatedRequest(`${("TURBOPACK compile-time value", "http://localhost:3001/")}api/auth/forgot-password`, {
+            method: "POST",
+            data: {
+                email
+            }
+        });
+        if (result.success) {
+            console.log('[Forgot Password] Reset email sent successfully');
+            return {
+                success: true,
+                message: result.data.message || "Password reset email sent successfully",
+                tokenSent: result.data.data?.tokenSent || false
+            };
+        }
+        throw new Error("Failed to send reset email");
+    } catch (error) {
+        console.error("[Forgot Password] Error:", error);
+        // Extract error message from axios error response
+        const errorMessage = error.response?.data?.message || error.message || "Failed to send reset email. Please try again.";
+        return {
+            success: false,
+            message: errorMessage
+        };
+    }
+};
+const resetPasswordWithToken = async (token, newPassword)=>{
+    try {
+        console.log('[Reset Password] Request payload:', {
+            token: token ? `${token.substring(0, 10)}...` : 'missing',
+            hasPassword: !!newPassword,
+            passwordLength: newPassword?.length
+        });
+        const result = await makeAuthenticatedRequest(`${("TURBOPACK compile-time value", "http://localhost:3001/")}api/auth/reset-password`, {
+            method: "POST",
+            data: {
+                token: token,
+                password: newPassword
+            }
+        });
+        if (result.success) {
+            console.log('[Reset Password] Password reset successful');
+            return {
+                success: true,
+                message: result.data.message || "Password reset successful"
+            };
+        }
+        throw new Error("Failed to reset password");
+    } catch (error) {
+        console.error("[Reset Password] Error:", error);
+        // Extract error message from axios error response
+        const errorMessage = error.response?.data?.message || error.message || "Failed to reset password. Please try again.";
+        return {
+            success: false,
+            message: errorMessage
+        };
     }
 };
 const getReferralCodes = async ({ page = 1, limit = 10, isActive, assignedStatus, search } = {})=>{
@@ -531,6 +594,7 @@ const getUserReferralUsage = async ({ userId, page = 1, limit = 50 } = {})=>{
         page: page.toString(),
         limit: limit.toString()
     });
+    console.log(userId);
     const result = await makeAuthenticatedRequest(`${("TURBOPACK compile-time value", "http://localhost:3001/")}api/admin/users/${userId}/referral-usage?${params}`, {
         method: "GET"
     });
@@ -622,6 +686,8 @@ const deleteUser = async (userId)=>{
     login,
     logout,
     refreshTokenServer,
+    forgotPasswordAdmin,
+    resetPasswordWithToken,
     getReferralCodes,
     getUsers,
     createReferralCode,
@@ -649,6 +715,8 @@ const deleteUser = async (userId)=>{
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(login, "7faf55d4a5250e32d7c281615d6cdd202c2e9af8fd", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(logout, "7f634046f827e92794253bb3d9a7f38597523d3f9c", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(refreshTokenServer, "7ff81f74be8868f15383cf98a71533f61625c2c70c", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(forgotPasswordAdmin, "7fa264b0eb4e14f9511b5952c5a0889e9f1b7b6469", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(resetPasswordWithToken, "7f33471bad80cdd3d4283a09a427be9d5071d8ed4f", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getReferralCodes, "7f6dce953196bda0c3c48bfb1528aceb2dd46d5ca6", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getUsers, "7f13bffc63cf5335e337f22081fafd35d4fad7ea81", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(createReferralCode, "7fac116abffd0d72a56c3d6979d040c5bfda37c582", null);

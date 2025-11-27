@@ -12,6 +12,7 @@ import PhotographerIcon from "../components/icons/PhotographerIcon";
 import VideographerIcon from "../components/icons/VideographerIcon";
 import FloristIcon from "../components/icons/FloristIcon";
 import PlannerIcon from "../components/icons/PlannerIcon";
+import OwnerEmailModal from "../components/OwnerEmailModal";
 
 
 
@@ -137,6 +138,15 @@ export default function ApprovedUsersPage() {
 
   const [expandedEmailId, setExpandedEmailId] = useState(null);
 
+  const [showOwnerModal, setShowOwnerModal] = useState(false);
+  const [ownerRefferal, setOwner] = useState(null);
+
+  const handleShowOwnerEmail = (owner) => {
+    setOwner(owner)
+    setShowOwnerModal(true);
+  };
+
+
 
   const handleViewReferralOwnerUsage = async (user) => {
     if (!user.referralCodeOwner || user.referralCodeOwner.type === "admin") {
@@ -241,25 +251,32 @@ export default function ApprovedUsersPage() {
     {
       key: "email",
       header: "Email",
-      render: (user) => (
-        <div className="relative inline-block">
-          <div
-            className="text-gray-600 cursor-pointer hover:text-blue-600 text-sm"
-            onClick={() =>
-              setExpandedEmailId(expandedEmailId === user.id ? null : user.id)
-            }
-          >
-            {user.email}
-          </div>
-
-          {expandedEmailId === user.id && user.phone && (
-            <div className="mt-1 text-xs text-gray-500 border rounded p-1 bg-gray-50 shadow-lg fixed left-4 right-4 sm:relative sm:left-auto sm:right-auto sm:mt-1 z-50">
-              📞 {user.phone}
+      render: (user) => {
+        const isOpen = expandedEmailId === user.id;
+        return (
+          <div className="relative inline-block">
+            <div
+              className="flex items-center gap-1 text-gray-600 cursor-pointer hover:text-blue-600 text-sm"
+              onClick={() =>
+                setExpandedEmailId(isOpen ? null : user.id)
+              }
+            >
+              {user.email}
+              <span className={`transition-transform ${isOpen ? "rotate-90" : ""}`}>
+                ▶
+              </span>
             </div>
-          )}
-        </div>
-      ),
+
+            {isOpen && user.phone && (
+              <div className="mt-1 text-xs text-gray-500 border rounded p-1 bg-gray-50 shadow-lg fixed left-4 right-4 sm:relative sm:left-auto sm:right-auto sm:mt-1 z-50">
+                📞 {user.phone}
+              </div>
+            )}
+          </div>
+        );
+      },
     }
+
     ,
     {
       key: "website",
@@ -332,38 +349,24 @@ export default function ApprovedUsersPage() {
       key: "referralCode",
       header: "Referral Code",
       render: (user) => {
-        if (!user.referralCodeOwner) {
-          return <span className="text-gray-400">N/A</span>;
-        }
+        const owner = user.referralCodeOwner;
 
-        if (user.referralCodeOwner.type === "admin") {
-          return (
-            <div className="text-gray-600">
-              <div className="font-semibold">Admin</div>
-            </div>
-          );
+        if (!owner) {
+          return <span className="text-gray-400">N/A</span>;
         }
 
         return (
           <div
-            className="max-w-[220px] cursor-pointer"
-            onClick={() => handleViewReferralOwnerUsage(user)}
+            className="cursor-pointer max-w-[240px]"
+            onClick={() => handleShowOwnerEmail(user.referralCodeOwner)}
           >
-            <div
-              className="text-sm text-gray-600 truncate"
-              title={user.referralCodeOwner.email}
-            >
-              {user.referralCodeOwner.email}
-            </div>
-            <div
-              className="text-sm text-blue-600 truncate"
-              title={user.referralCodeOwner.instagram || "N/A"}
-            >
-              {user.referralCodeOwner.instagram || "N/A"}
+            <div className="text-sm font-semibold text-blue-600">
+              {owner.code || "N/A"}
             </div>
           </div>
         );
       },
+
     },
     {
       key: "points",
@@ -707,6 +710,13 @@ export default function ApprovedUsersPage() {
           </button>
         </div>
       </Modal>
+
+      <OwnerEmailModal
+        isOpen={showOwnerModal}
+        onClose={() => setShowOwnerModal(false)}
+        owner={ownerRefferal}
+
+      />
     </div>
   );
 }

@@ -1,8 +1,14 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/dashboard/overview/page": "app/dashboard/overview/page.js",
   "/dashboard/referrals/page": "app/dashboard/referrals/page.js",
   "/dashboard/users/approved/page": "app/dashboard/users/approved/page.js",
   "/dashboard/users/pending/page": "app/dashboard/users/pending/page.js",
   "/dashboard/users/rejected/page": "app/dashboard/users/rejected/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/forgot-password/page": "app/forgot-password/page.js",
+  "/login/page": "app/login/page.js",
+  "/login/reset-password/page": "app/login/reset-password/page.js",
+  "/page": "app/page.js",
+  "/reset-password/page": "app/reset-password/page.js"
 }

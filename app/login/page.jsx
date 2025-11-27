@@ -1,9 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { AlertCircle, Eye, EyeOff } from "lucide-react";
+import { AlertCircle, Eye, EyeOff, UserPen } from "lucide-react";
 import { login } from "../../action";
 import { toast } from "sonner";
 import useUserStore from "../../store/userStore";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
   const { setAdmin } = useUserStore();
@@ -12,6 +13,7 @@ const Page = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [loginError, setLoginError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
 
   const [emailValidation, setEmailValidation] = useState({
     isValid: false,
@@ -60,7 +62,17 @@ const Page = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    console.log('[Login] Form submitted', {
+      timestamp: new Date().toISOString(),
+      email: email,
+      hasPassword: !!password,
+    });
+
     if (!emailValidation.isValid || !password) {
+      console.warn('[Login] Validation failed', {
+        emailValid: emailValidation.isValid,
+        hasPassword: !!password,
+      });
       return;
     }
 
@@ -68,18 +80,60 @@ const Page = () => {
     setLoginError("");
 
     try {
-      await login({ email, password });
-      // If we reach here without redirect, something went wrong
+      console.log('[Login] Attempting login...');
+
+      const result = await login({ email, password });
+
+      // If we reach here, something is wrong!
+      // The redirect should have thrown an error
+      console.error('[Login] UNEXPECTED: Login completed without redirect', {
+        timestamp: new Date().toISOString(),
+        result,
+        resultType: typeof result,
+        resultKeys: result ? Object.keys(result) : [],
+      });
+
+      // Handle error response object (shouldn't happen with fixed code)
+      if (result && !result.success) {
+        console.error('[Login] Login failed with error response', {
+          message: result.message,
+        });
+        setLoginError(result.message || "Login failed. Please try again.");
+        toast.error(result.message || "Login failed");
+      }
+
     } catch (error) {
-      // Only handle actual errors, not redirects
+      console.error('[Login] Error caught', {
+        timestamp: new Date().toISOString(),
+        errorType: error?.constructor?.name,
+        errorMessage: error?.message,
+        errorDigest: error?.digest,
+        isRedirect: error?.digest?.startsWith("NEXT_REDIRECT"),
+        fullError: error,
+      });
+
+      // ✅ Redirect error - this is SUCCESS!
       if (error?.digest?.startsWith("NEXT_REDIRECT")) {
-        // This is the redirect - it's working!
+        console.log('[Login] ✅ Redirect detected - login successful!', {
+          timestamp: new Date().toISOString(),
+        });
+        // Don't set loading to false - user is being redirected
         return;
       }
-      
-      setLoginError("Login failed. Please try again.");
-      toast.error("Login failed");
+
+      // Actual error - login failed
+      console.error('[Login] ❌ Login failed', {
+        timestamp: new Date().toISOString(),
+        message: error?.message,
+      });
+
+      setLoginError(error?.message || "Login failed. Please try again.");
+      toast.error(error?.message || "Login failed");
+
     } finally {
+      console.log('[Login] Cleanup', {
+        timestamp: new Date().toISOString(),
+      });
       setIsLoading(false);
     }
   };
@@ -90,7 +144,11 @@ const Page = () => {
     }
   };
 
-  return (
+  const handleForgotPassword = () => {
+    router.push("/forgot-password");
+  };
+
+ return (
     <div
       className="min-h-screen bg-white flex flex-col items-center justify-center px-6"
       style={{ fontFamily: "Nunito Sans, sans-serif" }}
@@ -127,9 +185,19 @@ const Page = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Password
-            </label>
+            <div className="flex items-center justify-between mb-2">
+              <label className="block text-sm font-medium text-gray-700">
+                Password
+              </label>
+              <button
+                type="button"
+                onClick={handleForgotPassword}
+                className="text-sm text-gray-600 hover:text-black transition-colors"
+                disabled={isLoading}
+              >
+                Forgot Password?
+              </button>
+            </div>
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
