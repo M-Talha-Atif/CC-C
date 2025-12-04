@@ -15,7 +15,10 @@ export function middleware(request: NextRequest) {
   }
 
   // 2. Skip public routes
-  const publicPaths = ["/login", "/api/auth/login"];
+  const publicPaths = ["/login",
+  "/forgot-password",   
+  "/api/auth/login",
+  "/api/auth/forgot-password" ];
 
   if (publicPaths.some((path) => pathname.startsWith(path))) {
     return NextResponse.next();

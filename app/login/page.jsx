@@ -145,6 +145,7 @@ const Page = () => {
   };
 
   const handleForgotPassword = () => {
+    console.log("Forgot-password")
     router.push("/forgot-password");
   };
 
