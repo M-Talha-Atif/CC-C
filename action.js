@@ -73,7 +73,6 @@ export const logout = async () => {
 };
 
 
-
 export const refreshTokenServer = async () => {
   try {
     const { data } = await axios.post(
@@ -161,38 +160,33 @@ const makeAuthenticatedRequest = async (url, options = {}) => {
  */
 export const forgotPasswordAdmin = async (email) => {
   try {
-    console.log('[Forgot Password] Initiating password reset for:', email);
-
-    const result = await makeAuthenticatedRequest(
+    const response = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_URL}api/auth/forgot-password`,
       {
         method: "POST",
-        data: { email },
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
       }
     );
 
-    if (result.success) {
-      console.log('[Forgot Password] Reset email sent successfully');
-      return {
-        success: true,
-        message: result.data.message || "Password reset email sent successfully",
-        tokenSent: result.data.data?.tokenSent || false,
-      };
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || "Failed to send reset email");
     }
 
-    throw new Error("Failed to send reset email");
+    return {
+      success: true,
+      message: data.message,
+      tokenSent: data.data?.tokenSent || false,
+    };
   } catch (error) {
-    console.error("[Forgot Password] Error:", error);
-
-    // Extract error message from axios error response
-    const errorMessage =
-      error.response?.data?.message ||
-      error.message ||
-      "Failed to send reset email. Please try again.";
-
+    console.error("Forgot password error:", error);
     return {
       success: false,
-      message: errorMessage,
+      message: error.message || "Failed to send reset email. Please try again.",
     };
   }
 };
@@ -205,44 +199,32 @@ export const forgotPasswordAdmin = async (email) => {
  */
 export const resetPasswordWithToken = async (token, newPassword) => {
   try {
-    console.log('[Reset Password] Request payload:', {
-      token: token ? `${token.substring(0, 10)}...` : 'missing',
-      hasPassword: !!newPassword,
-      passwordLength: newPassword?.length
-    });
-
-    const result = await makeAuthenticatedRequest(
+    const response = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_URL}api/auth/reset-password`,
       {
         method: "POST",
-        data: {
-          token: token,
-          password: newPassword
+        headers: {
+          "Content-Type": "application/json",
         },
+        body: JSON.stringify({ token, password:newPassword }),
       }
     );
 
-    if (result.success) {
-      console.log('[Reset Password] Password reset successful');
-      return {
-        success: true,
-        message: result.data.message || "Password reset successful",
-      };
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || "Failed to reset password");
     }
 
-    throw new Error("Failed to reset password");
+    return {
+      success: true,
+      message: data.message || "Password reset successful",
+    };
   } catch (error) {
-    console.error("[Reset Password] Error:", error);
-
-    // Extract error message from axios error response
-    const errorMessage =
-      error.response?.data?.message ||
-      error.message ||
-      "Failed to reset password. Please try again.";
-
+    console.error("Reset password error:", error);
     return {
       success: false,
-      message: errorMessage,
+      message: error.message || "Failed to reset password. Please try again.",
     };
   }
 };
@@ -265,7 +247,8 @@ export const getReferralCodes = async ({
   });
 
   const result = await makeAuthenticatedRequest(
-    `${process.env.NEXT_PUBLIC_BASE_URL
+    `${
+      process.env.NEXT_PUBLIC_BASE_URL
     }api/admin/referral-codes?${queryParams.toString()}`,
     {
       method: "GET",
@@ -294,7 +277,8 @@ export const getUsers = async ({
   });
 
   const result = await makeAuthenticatedRequest(
-    `${process.env.NEXT_PUBLIC_BASE_URL
+    `${
+      process.env.NEXT_PUBLIC_BASE_URL
     }api/admin/users?${queryParams.toString()}`,
     {
       method: "GET",
@@ -495,7 +479,8 @@ export const getReferralAnalytics = async ({
   });
 
   const result = await makeAuthenticatedRequest(
-    `${process.env.NEXT_PUBLIC_BASE_URL
+    `${
+      process.env.NEXT_PUBLIC_BASE_URL
     }api/admin/referral-analytics?${queryParams.toString()}`,
     {
       method: "GET",
@@ -524,7 +509,8 @@ export const getReferralUsage = async ({
   });
 
   const result = await makeAuthenticatedRequest(
-    `${process.env.NEXT_PUBLIC_BASE_URL
+    `${
+      process.env.NEXT_PUBLIC_BASE_URL
     }api/admin/referral-usage?${queryParams.toString()}`,
     {
       method: "GET",

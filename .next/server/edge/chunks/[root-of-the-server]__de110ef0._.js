@@ -36,7 +36,9 @@ function middleware(request) {
     // 2. Skip public routes
     const publicPaths = [
         "/login",
-        "/api/auth/login"
+        "/forgot-password",
+        "/api/auth/login",
+        "/api/auth/forgot-password"
     ];
     if (publicPaths.some((path)=>pathname.startsWith(path))) {
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$esm$2f$server$2f$web$2f$spec$2d$extension$2f$response$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["NextResponse"].next();
